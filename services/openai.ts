@@ -7,6 +7,7 @@ async function generateDreamInterpretation(dream: string) {
       { role: "system", content: "You are a dream interpreter." },
       { role: "user", content: dream },
     ],
+    max_tokens: process.env.MAX_TOKENS ? +process.env.MAX_TOKENS : 300,
   });
   return interpretation.data.choices[0].message;
 }
