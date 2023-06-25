@@ -7,6 +7,7 @@ api.post("/dream", async (req, res) => {
   const { dream } = req.body;
   try {
     const interpretation = await generateDreamInterpretation(dream);
+    console.log(interpretation);
     res.json(interpretation);
   } catch (error) {
     console.error(error);
